@@ -16,4 +16,10 @@ NORMAS MINIMAS DE COMUNICACION
 
 
 EVIDENCIAS DE LA FASE CERO
+
+En la imagen del documento, se trabajo por medio de Google Docs para, facilitar la edicion y participacion de todos los Roles asi, poder rellenar el Rol faltante que no respondio un integrante.
 <img width="1419" height="861" alt="image" src="https://github.com/user-attachments/assets/7e3b9ba3-adcb-4d42-abb8-b7cfae24416b" />
+
+En estas 2 imagenes se evidencia el canal de comunicacion WHATSAPP, y se aprecia los integrantes del grupo.
+<img width="425" height="518" alt="image" src="https://github.com/user-attachments/assets/9c63bfb0-8d02-4555-b280-47a9d32c9bf3" />
+<img width="429" height="519" alt="image" src="https://github.com/user-attachments/assets/ca1216a3-7c03-4749-a4b8-ffd06b9537f6" />
