@@ -17,6 +17,19 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
+      - name: Use the secret
+        run: |
+         echo "Usando el secreto en un comando (valor enmascarado):"
+          echo ${{ secrets.API_TOKEN }}
+        env:
+        # Asigna el secreto de GitHub a una variable de entorno local del paso
+          MY_ENV_VAR: ${{ secrets.API_TOKEN }}
+
+      - name: Run_script_with_env_var
+          run:
+            echo "La variable de entorno es: $MY_ENV_VAR"
+        # Aquí puedes usar $MY_ENV_VAR en tus scripts o herramientas
+
       - name: Configurar Python.py
         uses: actions/setup-python@v4
         with:
