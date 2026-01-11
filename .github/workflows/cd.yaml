@@ -1,9 +1,16 @@
 #name: CD Pipeline
 
+#<<<<<<< hotfix
+#on:
+ #push:
+  #branches: [ "main" ]
+   #$workflow_dispatch: Permite ejecución manual
+#=======
 #on:
  #push:
   #branches: [ "main" ]
    #$workflow_dispatch:   # Permite ejecución manual
+#>>>>>>> main
 
 #jobs:
  # deploy:
