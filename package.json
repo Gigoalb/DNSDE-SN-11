@@ -1,1 +1,20 @@
+{
+  "name": "dnsde-sn-11",
+  "version": "1.0.0",
+  "description": "Node.js app en producción con Render",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
 
