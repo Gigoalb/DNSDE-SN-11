@@ -23,8 +23,8 @@ jobs:
 
       - name: Debug root files
         run: |
-        pwd
-        ls -la
+          pwd
+          ls -la
 
 
       - name: Install dependencies
