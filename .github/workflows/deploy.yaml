@@ -2,17 +2,17 @@ name: CD
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    enviroment: production
+    environment: production
 
     steps:
-      - name: Trigger Render Deploy
-        uses:render-inc/deploy-action@v1
+      - name: Desplegar en Render
+        uses: render-inc/deploy-action@v1
         with:
           serviceId: ${{ secrets.RENDER_SERVICE_ID }}
           apiKey: ${{ secrets.RENDER_API_KEY }}
