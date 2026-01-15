@@ -11,4 +11,12 @@ jobs:
 
     steps:
       - name: Trigger Render Deploy
-        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
+        
+        run: |
+          if [ -z "${{ secrets.RENDER_DEPLOY_HOOK }}" ]; then
+          echo "❌ Secret NOT set"
+          exit 1
+          else
+          echo "✅ Secret is set"
+          fi
+
