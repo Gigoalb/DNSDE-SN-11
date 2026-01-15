@@ -10,8 +10,5 @@ jobs:
     environment: production
 
     steps:
-      - name: Desplegar en Render
-        uses: render-inc/deploy-action@v1
-        with:
-          serviceId: ${{ secrets.RENDER_SERVICE_ID }}
-          apiKey: ${{ secrets.RENDER_API_KEY }}
+      - name: Trigger Render Deploy
+        run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
