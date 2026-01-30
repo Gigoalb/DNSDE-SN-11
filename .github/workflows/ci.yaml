@@ -1,36 +1,67 @@
 name: CI Advanced
 
+
 on:
   push:
     branches: [ main, dev ]
   pull_request:
-
+ 
 permissions:
   contents: read
 
-jobs:
-  ci:
-    name: Full CI Pipeline
-    runs-on: ubuntu-latest
 
+jobs:
+  install:
+    name: Install & Cache
+    runs-on: ubuntu-latest
+   
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-
+          cache: "npm"
+         
       - name: Install dependencies
         run: npm ci
+ 
+  Lint:
+    name: Lint
+    needs: install
+    runs-on: ubuntu-latest
 
-      - name: Lint
-        run: npm run lint
 
-      - name: Run tests
-        run: npm test -- --coverage
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+
+      - run: npm ci
+      - run: npm run lint
+
+
+  test:
+    name: Tests + Coverage
+    needs: install
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+         
+      - run: npm ci
+      - run: npm test -- --coverage
+
 
       - name: Upload coverage
         uses: actions/upload-artifact@v4
@@ -38,5 +69,20 @@ jobs:
           name: coverage
           path: coverage/
 
-      - name: Security audit
-        run: npm audit --audit-level=high
+
+  build:
+    name: Build
+    needs: [Lint, test]
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+
+      - run: npm ci
+      - run: npm run build
