@@ -12,13 +12,15 @@ app.get("/health", (req, res) => {
   });
 });
 
-// --- ESTA ES LA PARTE QUE FALTABA ---
-// Solo iniciamos el servidor si este archivo se ejecuta directamente (no en tests)
+
+
+
 if (require.main === module) {
     const port = process.env.PORT || 3000;
     app.listen(port, () => {
-        console.log(Server running on port ${port});
-    });
+        console.log(`Server running on port ${port}`);
+
+});
 }
 
 module.exports = app;
