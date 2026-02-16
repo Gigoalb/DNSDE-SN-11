@@ -14,4 +14,3 @@ app.get("/health", (req, res) => {
   });
 });
 
-module.exports = app;
