@@ -11,7 +11,7 @@ describe("API Endpoints", () => {
   test("GET / debe responder correctamente", async () => {
   const res = await request(app).get("/");
   expect(res.statusCode).toBe(200);
-  expect(res.text).toBe("App Node.js en producción 🚀");
+  expect(res.text).toBe("Esta app ha sido destruida(Test-fail) 💀");
 });
 
   // ✅ Prueba 2 (Ajustada al nuevo estándar)
