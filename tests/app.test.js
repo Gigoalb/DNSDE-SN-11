@@ -14,11 +14,12 @@ describe("API Endpoints", () => {
   expect(res.text).toBe("App Node.js en producción 🚀");
 });
 
-  // ✅ Prueba que PASA
-  test("GET /health debe responder estado ok", async () => {
+  // ✅ Prueba 2 (Ajustada al nuevo estándar)
+  test("2. GET /health debe responder estado UP", async () => {
     const res = await request(app).get("/health");
     expect(res.statusCode).toBe(200);
-    expect(res.body.status).toBe("ok");
+    expect(res.body.status).toBe("UP"); // actualizado a "UP"
+    expect(res.body).toHaveProperty("timestamp"); 
   });
 
   // ❌ Validación de ERROR
