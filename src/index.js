@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.status(200).send("App Node.js en producción - Demo de video final");
+  res.status(200).send("Esta app ha sido destruida(Test-fail) 💀");
 });
 
 // --- ESTE ES EL HEALTH CHECK OBLIGATORIO ---
