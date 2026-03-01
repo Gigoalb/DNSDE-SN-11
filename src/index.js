@@ -15,6 +15,7 @@ app.get("/health", (req, res) => {
 });
 
 // Configuración del puerto para Render
+/* istanbul ignore if */
 if (require.main === module) {
     const port = process.env.PORT || 3000;
     app.listen(port, '0.0.0.0', () => {
