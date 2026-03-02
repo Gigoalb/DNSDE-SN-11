@@ -4,6 +4,11 @@ CI/CD CLOUD ECONÓMICO PARA APLICACIONES WEB CON GITHUB ACTIONS Y HOSTING GRATUI
 | ID | Caso de Prueba | Resultado | Commit SHA |
 |:---|:--- |:---:|:---:|
 | 01 | Estructura inicial | ✅ Pasó | `95298ba` |
+| 02 | Test               | ✅ Pasó | `d78a872` |
+| 03 | Estrés Carga       | ✅ Pasó | `4f8b21d` |
+| 04 | Test               | ✅ Pasó | `042249a` |
+
+
 
 
 DNSDE-SN-11 - CI/CD Pipeline
